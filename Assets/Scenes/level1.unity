@@ -24191,7 +24191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletScript: {fileID: 0}
   objetivosRestantes: 5
-  sceneIndex: 2
+  sceneIndex: 3
   textoGanar: {fileID: 1498335549}
 --- !u!4 &1535653209
 Transform:

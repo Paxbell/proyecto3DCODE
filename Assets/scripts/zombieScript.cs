@@ -26,19 +26,23 @@ public class zombieScript : MonoBehaviour
     // Cambia Start a virtual y protected para poder sobreescribirlo
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
-        agent.speed = speed;
+    player = GameObject.FindGameObjectWithTag("Player").transform;
+    agent = GetComponent<NavMeshAgent>();
+    animator = GetComponent<Animator>();
+    agent.speed = speed;
 
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.loop = true;
+    audioSource = gameObject.AddComponent<AudioSource>();
+    audioSource.loop = true;
+    audioSource.spatialBlend = 1f;
+    audioSource.minDistance = 1f;
+    audioSource.maxDistance = 15f;
+    audioSource.rolloffMode = AudioRolloffMode.Linear;
 
-        if (sonidoIdle != null)
-        {
-            audioSource.clip = sonidoIdle;
-            audioSource.Play();
-        }
+    if (sonidoIdle != null)
+    {
+        audioSource.clip = sonidoIdle;
+        audioSource.Play();
+    }
     }
 
     void Update()
