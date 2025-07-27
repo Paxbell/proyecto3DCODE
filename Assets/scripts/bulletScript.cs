@@ -46,8 +46,6 @@ public class bulletScript : MonoBehaviour
                     boss.TakeDamage(damage);
                 }
             }
-
-            CreateBulletImpactEffect(HittedObject);
             Destroy(gameObject);
         }
     }

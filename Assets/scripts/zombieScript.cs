@@ -20,10 +20,11 @@ public class zombieScript : MonoBehaviour
     public AudioClip sonidoIdle;
     public AudioClip sonidoAtaque;
     public AudioClip sonidoMuerte;
+    public AudioClip sonidoImpacto; 
 
     private AudioSource audioSource;
 
-    // Cambia Start a virtual y protected para poder sobreescribirlo
+
     protected virtual void Start()
     {
     player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -74,17 +75,22 @@ public class zombieScript : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+public void TakeDamage(float damage)
+{
+    if (isDead) return;
+
+    // Reproducir sonido de impacto
+    if (sonidoImpacto != null)
+        audioSource.PlayOneShot(sonidoImpacto);
+
+    health -= damage;
+
+    if (health <= 0)
     {
-        if (isDead) return;
-
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Die();
-        }
+        Die();
     }
+}
+
 
     void Die()
     {
@@ -94,12 +100,12 @@ public class zombieScript : MonoBehaviour
 
         if (sonidoMuerte != null)
         {
-            audioSource.Stop(); // detener sonido idle si está
+            audioSource.Stop(); 
             audioSource.loop = false;
             audioSource.clip = sonidoMuerte;
             audioSource.Play();
         }
 
-        Destroy(gameObject, 3.5f); // Opcional: se destruye después de 3 segundos
+        Destroy(gameObject, 3.5f); 
     }
 }

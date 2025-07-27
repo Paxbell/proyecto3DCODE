@@ -1254,6 +1254,10 @@ MonoBehaviour:
   - {fileID: 6013117267056751934}
   - {fileID: 3307438348565297530}
   - {fileID: 5853166255972508935}
+  sonidosRotura:
+  - {fileID: 8300000, guid: b9af872148d161840bb3ee923ce4f840, type: 3}
+  - {fileID: 8300000, guid: 899701a85f215454cad17f2e35754648, type: 3}
+  - {fileID: 8300000, guid: db3c7bb2f13a46745897d9821ef720e7, type: 3}
 --- !u!1 &5795974916472008068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918387934802837528, guid: cf203e602568674498327fc5ffcb21a7, type: 3}

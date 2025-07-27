@@ -1106,6 +1106,7 @@ MonoBehaviour:
   sonidoIdle: {fileID: 8300000, guid: ca5bec124ae18d949b08586fb00c260e, type: 3}
   sonidoAtaque: {fileID: 8300000, guid: 1fe350971494042478f7a8d530fa6f0a, type: 3}
   sonidoMuerte: {fileID: 8300000, guid: 6359468ac77c56240afc754b9cb2111a, type: 3}
+  sonidoImpacto: {fileID: 8300000, guid: 54ea1c65e3416904f85f6de3d72f26c5, type: 3}
 --- !u!195 &511711104705299866
 NavMeshAgent:
   m_ObjectHideFlags: 0
